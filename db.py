@@ -19,21 +19,21 @@ class DatabaseManager(object):
         self.query('CREATE TABLE IF NOT EXISTS questions (cid int, question text)')
 
     def query(self, arg, values=None):
-        if values == None:
+        if values is None:
             self.cur.execute(arg)
         else:
             self.cur.execute(arg, values)
         self.conn.commit()
 
     def fetchone(self, arg, values=None):
-        if values == None:
+        if values is None:
             self.cur.execute(arg)
         else:
             self.cur.execute(arg, values)
         return self.cur.fetchone()
 
     def fetchall(self, arg, values=None):
-        if values == None:
+        if values is None:
             self.cur.execute(arg)
         else:
             self.cur.execute(arg, values)

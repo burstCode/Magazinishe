@@ -1,5 +1,5 @@
 from aiogram.dispatcher import FSMContext
-from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove
+from aiogram.types import ReplyKeyboardRemove
 from keyboards.default.markups import all_right_message, cancel_message, submit_markup
 from aiogram.types import Message
 from app import SosState
@@ -39,7 +39,7 @@ async def process_submit(message: Message, state: FSMContext):
 
     cid = message.chat.id
 
-    if db.fetchone('SELECT * FROM questions WHERE cid=?', (cid,)) == None:
+    if db.fetchone('SELECT * FROM questions WHERE cid=?', (cid,)) is None:
 
         async with state.proxy() as data:
             db.query('INSERT INTO questions VALUES (?, ?)',

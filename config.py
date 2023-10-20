@@ -2,5 +2,4 @@
 
 BOT_TOKEN = '6598763289:AAFTpbeO0ve7lradTGsQlcshSYin9AojrtM'
 
-
 ADMINS = [1120233842]
