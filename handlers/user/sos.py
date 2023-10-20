@@ -10,7 +10,8 @@ from loader import dp, db
 @dp.message_handler(commands='sos')
 async def cmd_sos(message: Message):
     await SosState.question.set()
-    await message.answer('В чем суть проблемы? Опишите как можно детальнее и администратор обязательно вам ответит.', reply_markup=ReplyKeyboardRemove())
+    await message.answer('В чем суть проблемы? Опишите как можно детальнее и администратор обязательно вам ответит.',
+                         reply_markup=ReplyKeyboardRemove())
 
 
 @dp.message_handler(state=SosState.question)

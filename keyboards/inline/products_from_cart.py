@@ -3,8 +3,8 @@ from aiogram.utils.callback_data import CallbackData
 
 product_cb = CallbackData('product', 'id', 'action')
 
-def product_markup(idx, count):
 
+def product_markup(idx, count):
     global product_cb
 
     markup = InlineKeyboardMarkup()

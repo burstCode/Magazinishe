@@ -6,10 +6,10 @@ catalog = '🛍️ Каталог'
 balance = '💰 Баланс'
 cart = '🛒 Корзина'
 delivery_status = '🚚 Статус заказа'
-
 settings = '⚙️ Настройка каталога'
 orders = '🚚 Заказы'
 questions = '❓ Вопросы'
+
 
 @dp.message_handler(IsAdmin(), commands='menu')
 async def admin_menu(message: Message):
@@ -18,6 +18,7 @@ async def admin_menu(message: Message):
     markup.add(questions, orders)
 
     await message.answer('Меню', reply_markup=markup)
+
 
 @dp.message_handler(IsUser(), commands='menu')
 async def user_menu(message: Message):
